@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ICEProj'`, () => {
+  it(`should have as title 'aflSite'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ICEProj');
+    expect(app.title).toEqual('aflSite');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ICEProj app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('aflSite app is running!');
   });
 });
