@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "aflSite"
+    }
+  },
+  "defaultProject": "aflSite",
+  "cli": {
+    "analytics": "26110043-5b9c-461e-8528-875c7833ea2d"
+  }
 }
