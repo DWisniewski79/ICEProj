@@ -35,7 +35,7 @@ export class TeamStatsComponent implements OnInit {
 
 
     temp.forEach(element => {
-      if(element.round == this.setRound(this.roundSelect)) tempArr.push(element);
+      if(element.round == this.roundSelect) tempArr.push(element);
     });
 
 
@@ -52,6 +52,7 @@ export class TeamStatsComponent implements OnInit {
   {
     console.log("the selected value is " + x);
     this.roundSelect = x;
+    this.getGames();
     console.log(this.roundSelect);
   }
  

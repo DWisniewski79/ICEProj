@@ -24,20 +24,23 @@
           <option value="19">Round 19</option>
           <option value="20">Round 20</option>
         </select>
-        <caption><h2>TEAM STATS</h2></caption>
+        <caption><h2>ROUND WINNERS</h2></caption>
         
+        <tr>
+            <th>Round</th>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Winner</th>
+            
+        </tr>
         <tr *ngFor= "let game of games">
-            <div *ngIf = "game.round == game.roundSelect">
+            
             <td>{{game.round}}</td>
             <td>{{game.hteam}}</td>
             <td>{{game.ateam}}</td>
             <td>{{game.winner}}</td>
-            <td>{{game.ateamid}}</td>
-            <td>{{game.hteamid}}</td>
-            
-
-        </div>
-            
+           
+                              
         </tr>
        
     </table>
