@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { TeamDataService } from '../team-data.service';
-=======
->>>>>>> 7d5b55dee4f90d5a51f3718036991fd4ff180bff
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +8,6 @@ import { TeamDataService } from '../team-data.service';
 })
 export class NavbarComponent implements OnInit {
 
-<<<<<<< HEAD
   teams: any = [];
   constructor(private tDataService: TeamDataService) { }
 
@@ -23,10 +19,5 @@ export class NavbarComponent implements OnInit {
         // console.log(this.teams['name'])
       }
     })
-=======
-  constructor() { }
-
-  ngOnInit(): void {
->>>>>>> 7d5b55dee4f90d5a51f3718036991fd4ff180bff
   }
 }
