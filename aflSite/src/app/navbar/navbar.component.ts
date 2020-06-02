@@ -9,6 +9,9 @@ import { TeamDataService } from '../team-data.service';
 export class NavbarComponent implements OnInit {
 
   teams: any = [];
+  //
+  completed: any=[];
+//
   constructor(private tDataService: TeamDataService) { }
 
 
@@ -20,4 +23,10 @@ export class NavbarComponent implements OnInit {
       }
     })
   }
+
+  // ***************************************
+  
+
+  
+  //************************************ 
 }

@@ -1,16 +1,19 @@
-<div class="row home-team noMargin">
-    <div class="container">
-        <h1 class="text-center">Choose your Fav Team</h1><br>
+
+<div class="provider" style="margin: 4%">
+    
+        <!-- <h1 class="text-center">Choose your Fav Team</h1><br> -->
         <div class="row">
 
-            <div class="col-lg-1 col-sm-3 col-xs-1 item" *ngFor="let team of teams">
+            <div class="row-child item" *ngFor="let team of teams">
 
                 <a [routerLink]="['/teams',team['id'], team['name'] ]"><img title="{{team['name']}}"
                         class="img-responsive itemImage" src="https://squiggle.com.au{{team['logo']}}"
                         alt="Card image cap"
                         style="width: 60px"> </a>
-                        <p>{{team['name']}}</p>
+                        <!-- <p>{{team['name']}}</p> -->
             </div>
+            
         </div>
-    </div>
+    
 </div>
+
