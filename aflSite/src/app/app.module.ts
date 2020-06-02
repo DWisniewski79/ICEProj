@@ -3,16 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { TeamStatsComponent } from './team-stats/team-stats.component';
+import{CompleteGameResultsService} from './complete-game-results.service';
+import{HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TeamStatsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CompleteGameResultsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
