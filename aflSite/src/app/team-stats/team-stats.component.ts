@@ -13,7 +13,9 @@ export class TeamStatsComponent implements OnInit {
 
   games: Game[];
 
-  roundSelect: number=1;
+  roundSelect: number=1;  
+  win:number= 0;
+  loss:number = 0;
   
   constructor(private gameService: CompleteGameResultsService) 
   {
@@ -32,8 +34,18 @@ export class TeamStatsComponent implements OnInit {
     
       
     var tempArr = [];
-
-
+  
+    var favTeamID = 2;
+    var lastFive = this.roundSelect-5;
+    // 
+    temp.forEach(element=>{
+      if(favTeamID == element.winnerteamid )
+      {
+         this.win++;
+      }
+      else if(favTeamID != element.winnerteamid && (element.hteamid == favTeamID)||(element.ateamid == favTeamID)) this.loss++;
+    }); //Using hteam as we have not yet developed the fav team funcitonaity
+    //  
     temp.forEach(element => {
       if(element.round == this.roundSelect) tempArr.push(element);
     });
@@ -42,6 +54,8 @@ export class TeamStatsComponent implements OnInit {
 
     this.games = tempArr;
     console.log(this.games);
+    console.log(this.win);
+    console.log(this.loss);
   
     });
 
