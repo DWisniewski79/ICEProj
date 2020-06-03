@@ -9,9 +9,7 @@ import { TeamDataService } from '../team-data.service';
 export class NavbarComponent implements OnInit {
 
   teams: any = [];
-  //
-  completed: any=[];
-//
+
   constructor(private tDataService: TeamDataService) { }
 
 
@@ -19,14 +17,8 @@ export class NavbarComponent implements OnInit {
     this.tDataService.getTeam().subscribe(response => {
       for (var i = 0; i < response['teams'].length; i++) {
         this.teams = response['teams']
-        // console.log(this.teams['name'])
       }
     })
   }
 
-  // ***************************************
-  
-
-  
-  //************************************ 
 }
