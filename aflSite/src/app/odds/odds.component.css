@@ -9,7 +9,7 @@
     padding-left: 200px;
     align-items: center;
     position: relative;
-    left: 100px;
+    left: 1000px;
 }
 
 
@@ -42,6 +42,8 @@
 .content-table tbody tr.active-row{
     font-weight: bold;
     color: #0074D9;
-    text-align: left;
-    
+}
+
+.selectRound, .selectSource{
+
 }

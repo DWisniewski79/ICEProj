@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, ɵɵNgOnChangesFeature, SimpleChange, OnChanges} from '@angular/core';
 import{CompleteGameResultsService} from '../complete-game-results.service';
 import { HttpClient} from '@angular/common/http';
 import{Game} from '../game';
@@ -12,12 +12,15 @@ import { element } from 'protractor';
 export class TeamStatsComponent implements OnInit {
 
   games: Game[];
-
-  roundSelect: number = 1;
+  win: number = 0;
+  loss: number = 0;
+  favouriteTeam: number = 2;
+  roundSelect: number;
+  
   
   constructor(private gameService: CompleteGameResultsService) 
   {
-      
+
   }
 
   ngOnInit(): void 
@@ -27,33 +30,32 @@ export class TeamStatsComponent implements OnInit {
   }
 
   getGames(): void
-  {
+  {     
+    
     this.gameService.getCompleteGameResult().subscribe(temp=> {this.games = temp
     
-      
     var tempArr = [];
 
-
     temp.forEach(element => {
-      if(element.round == this.roundSelect) tempArr.push(element);
+      if(element.hteamid == this.favouriteTeam || element.ateamid == this.favouriteTeam) tempArr.push(element);
+
+      if(element.round >19) tempArr.push(element.winner = "");
+      if(element.round == 24)tempArr.push(null);
+
     });
-
-
-
+    
     this.games = tempArr;
     console.log(this.games);
-  
-    });
 
+    });
+    
   }
 
 
   setRound(x): void
   {
-    console.log("the selected value is " + x);
     this.roundSelect = x;
-    this.getGames();
-    console.log(this.roundSelect);
+    console.log("the selected value is " + x);
   }
  
 
