@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class TeamDataService {
+  getLadder: any;
 
   constructor(private http: HttpClient) { }
 
