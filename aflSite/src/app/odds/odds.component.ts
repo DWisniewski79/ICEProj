@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Tips} from '../tips'
-import {TipDataService} from '../tip-data.service'
+import { Tips } from '../tips'
+import { TipDataService } from '../tip-data.service'
 
 @Component({
   selector: 'app-odds',
@@ -11,6 +11,7 @@ export class OddsComponent implements OnInit {
 
   tips: Tips[];
   roundSelect: number = 1;
+  sourceSelect: string = "Squiggle";
   constructor(private tipsService: TipDataService) { }
 
   ngOnInit(): void {
@@ -20,14 +21,16 @@ export class OddsComponent implements OnInit {
   }
 
 
-  getTips(): void{
-    this.tipsService.getTipData().subscribe(temp => {this.tips = temp
-      
+  getTips(): void {
+    this.tipsService.getTipData().subscribe(temp => {
+    this.tips = temp
+
       var tempArr = [];
 
 
       temp.forEach(element => {
-        if(element.round == this.roundSelect) tempArr.push(element);
+        if (element.source == this.sourceSelect && element.round == this.roundSelect) tempArr.push(element);
+
 
       });
 
@@ -38,12 +41,18 @@ export class OddsComponent implements OnInit {
   }
 
 
-  setRound(x): void
-  {
+  setRound(x): void {
     console.log("the selected value is " + x);
     this.roundSelect = x;
     this.getTips();
     console.log(this.roundSelect);
+  }
+
+  setSource(x): void {
+    console.log("the selected value is " + x);
+    this.sourceSelect = x;
+    this.getTips();
+    console.log(this.sourceSelect);
   }
 
 }

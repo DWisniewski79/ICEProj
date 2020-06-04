@@ -1,7 +1,7 @@
-import { Component, OnInit, Input} from '@angular/core';
-import{CompleteGameResultsService} from '../complete-game-results.service';
-import { HttpClient} from '@angular/common/http';
-import{Game} from '../game';
+import { Component, OnInit, Input, ɵɵNgOnChangesFeature, SimpleChange, OnChanges } from '@angular/core';
+import { CompleteGameResultsService } from '../complete-game-results.service';
+import { HttpClient } from '@angular/common/http';
+import { Game } from '../game';
 import { element } from 'protractor';
 
 @Component({
@@ -12,63 +12,48 @@ import { element } from 'protractor';
 export class TeamStatsComponent implements OnInit {
 
   games: Game[];
+  win: number = 0;
+  loss: number = 0;
+  favouriteTeam: number = 2;
+  roundSelect: number;
 
-  roundSelect: number=1;  
-  win:number= 0;
-  loss:number = 0;
-  
-  constructor(private gameService: CompleteGameResultsService) 
-  {
-      
+
+  constructor(private gameService: CompleteGameResultsService) {
+
   }
 
-  ngOnInit(): void 
-  {
+  ngOnInit(): void {
     this.getGames();
-    
+
   }
 
-  getGames(): void
-  {
-    this.gameService.getCompleteGameResult().subscribe(temp=> {this.games = temp
-    
-      
-    var tempArr = [];
-  
-    var favTeamID = 2;
-    var lastFive = this.roundSelect-5;
-    // 
-    temp.forEach(element=>{
-      if(favTeamID == element.winnerteamid )
-      {
-         this.win++;
-      }
-      else if(favTeamID != element.winnerteamid && (element.hteamid == favTeamID)||(element.ateamid == favTeamID)) this.loss++;
-    }); //Using hteam as we have not yet developed the fav team funcitonaity
-    //  
-    temp.forEach(element => {
-      if(element.round == this.roundSelect) tempArr.push(element);
-    });
+  getGames(): void {
 
+    this.gameService.getCompleteGameResult().subscribe(temp => {
+    this.games = temp
 
+      var tempArr = [];
 
-    this.games = tempArr;
-    console.log(this.games);
-    console.log(this.win);
-    console.log(this.loss);
-  
+      temp.forEach(element => {
+        if (element.hteamid == this.favouriteTeam || element.ateamid == this.favouriteTeam) tempArr.push(element);
+
+        if (element.round > 19) tempArr.push(element.winner = "");
+        if (element.round == 24) tempArr.push(null);
+
+      });
+
+      this.games = tempArr;
+      console.log(this.games);
+
     });
 
   }
 
 
-  setRound(x): void
-  {
-    console.log("the selected value is " + x);
+  setRound(x): void {
     this.roundSelect = x;
-    this.getGames();
-    console.log(this.roundSelect);
+    console.log("the selected value is " + x);
   }
- 
+
 
 }

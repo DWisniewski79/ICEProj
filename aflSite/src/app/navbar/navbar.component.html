@@ -1,23 +1,30 @@
 
-<div class="provider" style="margin: 4%">
+<div class="provider" style="margin:30px 4% 0px 4%;" id="ParentDiv">
+    <img src="../assets/img/afl-logo.png" style="float: left; width:250px; margin-right:75px;">
     
-        <!-- <h1 class="text-center">Choose your Fav Team</h1><br> -->
-        <div class="row">
+         
+         <div class="row">
 
-            <div class="row-child item" *ngFor="let team of teams">
+            <div class="row-child item" *ngFor="let team of teams" (click) = "onSelect(team)"> 
 
-                <a [routerLink]="['/teams',team['id'], team['name'] ]"><img title="{{team['name']}}"
-                        class="img-responsive itemImage" src="https://squiggle.com.au{{team['logo']}}"
+                <!-- <a [routerLink]="['/teams',team['id'], team['name'] ]"> -->
+                    <!-- console.log({{team.name}}); -->
+                    <img title="{{team.name}}"
+                        class="img-responsive itemImage" src="https://squiggle.com.au{{team.logo}}"
                         alt="Card image cap"
-                        style="width: 60px"> </a>
+                        style="width: 60px"> 
+
+
+                        
+                    <!-- </a> -->
                         <!-- <p>{{team['name']}}</p> -->
 
                         <!-- <div *ngIf = "team['id']==3">
                             <p>This will display {{team['name']}}</p>
                         </div> -->
-            </div>
-            
+             </div>
+            <!-- <app-team-stats [team]="selectedTeam"></app-team-stats> -->
         </div>
-    
-</div>
+
+
 

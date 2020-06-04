@@ -33,3 +33,41 @@ p
     /* margin: 0% 5%; */
     margin: 7px;
 }
+
+
+
+
+
+table{
+
+    border: 2px solid black;
+    width: 50%;
+
+    bottom: 50px;
+    left: 25%;
+
+
+}
+
+
+
+caption{
+    caption-side: top;
+    padding-left: 300px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    color: black;
+}
+
+th{
+    text-align: center;
+    border: 2px solid black;
+    padding-right: 20px;
+    font-size: 20px;
+}
+td{
+
+    border: 2px solid black;
+    padding-right: 20px;
+}

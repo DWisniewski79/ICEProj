@@ -11,6 +11,6 @@ export class LadderDataService {
 
   getLadderData()
   {
-    return this.http.get('https://api.squiggle.com.au/?q=standings;year=2019;round=20');
+    return this.http.get('https://api.squiggle.com.au/?q=standings;year=2019;round=19');
   }
 }

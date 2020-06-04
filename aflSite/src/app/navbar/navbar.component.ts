@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamDataService } from '../team-data.service';
-
+import{Team} from "../team";
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -8,17 +8,29 @@ import { TeamDataService } from '../team-data.service';
 })
 export class NavbarComponent implements OnInit {
 
-  teams: any = [];
+  teams: Team[];
+  selectedTeam: Team;
 
   constructor(private tDataService: TeamDataService) { }
 
 
   ngOnInit() {
-    this.tDataService.getTeam().subscribe(response => {
-      for (var i = 0; i < response['teams'].length; i++) {
-        this.teams = response['teams']
-      }
+    this.getSelectedTeam();
+  }
+
+
+
+  getSelectedTeam() : void{
+    this.tDataService.getTeam().subscribe(temp => {
+      this.teams = temp;
+      console.log(temp);
     })
+    console.log(this.tDataService);
+  }
+
+
+  onSelect(team: Team) : void{
+    this.selectedTeam = team;
   }
 
 }
