@@ -38,14 +38,19 @@ export class TeamStatsComponent implements OnInit {
 
     temp.forEach(element => {
       if(element.hteamid == this.favouriteTeam || element.ateamid == this.favouriteTeam) tempArr.push(element);
+       
+        tempArr.splice(23,1);
 
-      if(element.round >19) tempArr.push(element.winner = "");
-      if(element.round == 24)tempArr.push(null);
+      
+
+        
+      
 
     });
-    
+
+    console.log(tempArr);
     this.games = tempArr;
-    console.log(this.games);
+    
 
     });
     
@@ -55,6 +60,7 @@ export class TeamStatsComponent implements OnInit {
   setRound(x): void
   {
     this.roundSelect = x;
+    this.getGames();
     console.log("the selected value is " + x);
   }
  
