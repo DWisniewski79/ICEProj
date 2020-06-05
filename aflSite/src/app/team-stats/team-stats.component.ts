@@ -37,7 +37,7 @@ export class TeamStatsComponent implements OnInit {
       var tempArr = [];
 
       temp.forEach(element => {
-        if (element.hteamid == this.favouriteTeam || element.ateamid == this.favouriteTeam) tempArr.push(element);
+        if (element.round == this.roundSelect) tempArr.push(element);
 
         // if (element.round > 19) tempArr.push(element.winner = "");
         // if (element.round == 24) tempArr.push(null);
