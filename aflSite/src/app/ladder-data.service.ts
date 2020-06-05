@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+<<<<<<< HEAD
 import {ladder} from './ladder';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
+=======
+import { CATCH_ERROR_VAR } from '@angular/compiler/src/output/output_ast';
+>>>>>>> 67d638695756e4705f46d026ef20f823efed2e3b
 
 @Injectable({
   providedIn: 'root'
