@@ -7,14 +7,16 @@ import { element } from 'protractor';
 @Component({
   selector: 'app-team-stats',
   templateUrl: './team-stats.component.html',
-  styleUrls: ['./team-stats.component.css']
+  styleUrls: ['./team-stats.component.css'],
+  
+
 })
 export class TeamStatsComponent implements OnInit {
 
   games: Game[];
   win: number = 0;
   loss: number = 0;
-  favouriteTeam: number = 2;
+  @Input() favouriteTeam: number =1;
   roundSelect: number;
 
 
@@ -37,8 +39,8 @@ export class TeamStatsComponent implements OnInit {
       temp.forEach(element => {
         if (element.hteamid == this.favouriteTeam || element.ateamid == this.favouriteTeam) tempArr.push(element);
 
-        if (element.round > 19) tempArr.push(element.winner = "");
-        if (element.round == 24) tempArr.push(null);
+        // if (element.round > 19) tempArr.push(element.winner = "");
+        // if (element.round == 24) tempArr.push(null);
 
       });
 

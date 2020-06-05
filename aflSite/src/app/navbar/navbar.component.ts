@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TeamDataService } from '../team-data.service';
 import{Team} from "../team";
 @Component({
@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
 
   teams: Team[];
   selectedTeam: Team;
+  @Input() favTeamId:number; 
 
   constructor(private tDataService: TeamDataService) { }
 
@@ -31,6 +32,12 @@ export class NavbarComponent implements OnInit {
 
   onSelect(team: Team) : void{
     this.selectedTeam = team;
+    
   }
 
+  onFavTeamSet(teamId:number):void{
+    console.log(teamId);
+    this.favTeamId=teamId;
+  
+  }
 }

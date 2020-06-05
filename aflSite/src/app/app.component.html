@@ -8,8 +8,9 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
+<!-- <app-navbar [favTeamclick]="onAppFavset"></app-navbar> -->
 <app-navbar></app-navbar>
 <app-odds></app-odds>
-<app-team-stats></app-team-stats>
-
+<!-- <app-team-stats [favouriteTeam] ="favouriteTeam"></app-team-stats> -->
+<app-team-stats [favouriteTeam]="3"></app-team-stats>
 <router-outlet></router-outlet>

@@ -9,10 +9,13 @@
 
                 <!-- <a [routerLink]="['/teams',team['id'], team['name'] ]"> -->
                     <!-- console.log({{team.name}}); -->
-                    <img title="{{team.name}}"
+                    <a (click)="onFavTeamSet(team.id)">
+                        
+                        <img title="{{team.name}}"
                         class="img-responsive itemImage" src="https://squiggle.com.au{{team.logo}}"
                         alt="Card image cap"
-                        style="width: 60px"> 
+                        style="width: 60px">
+                    </a> 
 
 
                         

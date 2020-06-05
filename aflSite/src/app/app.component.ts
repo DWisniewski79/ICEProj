@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 // import { NavbarComponent } from './navbar/navbar.component';
 
 @Component({
@@ -10,4 +10,13 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'aflSite';
+  favouriteTeam: number ;
+  favTeamId:number=1;
+
+
+   onAppFavset(teamid:number): void {
+    //console.log(teamId);
+    this.favTeamId = teamid;
+  }
 }
+
