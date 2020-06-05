@@ -17,7 +17,7 @@ export class TeamStatsComponent implements OnInit {
   win: number = 0;
   loss: number = 0;
   @Input() favouriteTeam: number =1;
-  roundSelect: number;
+  roundSelect: number = 19;
 
 
   constructor(private gameService: CompleteGameResultsService) {
@@ -54,6 +54,7 @@ export class TeamStatsComponent implements OnInit {
 
   setRound(x): void {
     this.roundSelect = x;
+    this.getGames();
     console.log("the selected value is " + x);
   }
 
