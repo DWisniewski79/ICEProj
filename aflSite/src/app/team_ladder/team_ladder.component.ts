@@ -5,7 +5,7 @@ import { componentFactoryName } from '@angular/compiler';
 import { TeamDataService } from '../team-data.service';
 
 @Component({
-    selector: 'app-team_ladder',
+    selector: 'app-team-ladder',
     templateUrl: './team_ladder.component.html',
     styleUrls: ['./team_ladder.component.css']
 })
