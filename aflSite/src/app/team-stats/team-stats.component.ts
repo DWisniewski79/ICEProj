@@ -17,7 +17,7 @@ export class TeamStatsComponent implements OnInit {
   win: number = 0;
   loss: number = 0;
   @Input() favouriteTeam: number =1;
-  roundSelect: number;
+  roundSelect: number=1;
 
 
   constructor(private gameService: CompleteGameResultsService) {
