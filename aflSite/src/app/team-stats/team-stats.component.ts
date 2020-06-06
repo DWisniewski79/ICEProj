@@ -41,7 +41,7 @@ export class TeamStatsComponent implements OnInit {
 
         // if (element.round > 19) tempArr.push(element.winner = "");
         // if (element.round == 24) tempArr.push(null);
-
+        //FINALLL
       });
 
       this.games = tempArr;
