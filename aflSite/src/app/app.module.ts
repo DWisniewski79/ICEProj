@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OddsComponent} from './odds/odds.component';
@@ -18,11 +19,18 @@ import { RouterModule, Routes } from '@angular/router';
     NavbarComponent,
     TeamStatsComponent,
     OddsComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+
+    HttpClientModule,
+
+    RouterModule.forRoot([
+      { },
+    ])
+
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TeamDataService {
+  getLadder: any;
 
   // constructor(private http: HttpClient) { }
 
