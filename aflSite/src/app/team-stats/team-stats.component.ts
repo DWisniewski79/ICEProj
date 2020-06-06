@@ -54,6 +54,7 @@ export class TeamStatsComponent implements OnInit {
 
   setRound(x): void {
     this.roundSelect = x;
+    this.getGames();
     console.log("the selected value is " + x);
   }
 
